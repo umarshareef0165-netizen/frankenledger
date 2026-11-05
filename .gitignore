@@ -1,0 +1,32 @@
+# FrankenLedger — .gitignore
+# NOTE: .kiro is NEVER ignored. Kiro specs, steering, agents and hooks are
+# committed from day one as evidence the project was built with Kiro.
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Env / secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Local session uploads (ephemeral user data — never committed)
+apps/api/uploads/
+apps/api/tmp/
