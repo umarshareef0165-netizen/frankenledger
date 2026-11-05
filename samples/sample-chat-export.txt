@@ -1,0 +1,25 @@
+# FICTIONAL SAMPLE DATA — Noor General Store
+# Every customer, item, and number below is INVENTED for the FrankenLedger
+# demo. No real shop, no real person, no real transaction.
+# WhatsApp chat export format: DD/MM/YYYY, HH:MM - Sender: message
+
+03/11/2026, 09:15 - Ahmed: Salam bhai, 2kg cheeni bhej do, Rs 500
+03/11/2026, 09:20 - Noor General Store: Walaikum salam Ahmed bhai, bhej di, Rs 500
+03/11/2026, 09:22 - Ahmed: paise de diye, shukriya
+03/11/2026, 10:05 - Bilal: bhai 3kg atta chahiye, 450 rupy
+03/11/2026, 10:06 - Bilal: kal paise dunga
+03/11/2026, 11:30 - Sana: 1 litre doodh, 220, udhaar please
+03/11/2026, 12:40 - Usman: 2 darjan anda, 600 rupy, paid
+03/11/2026, 13:15 - Fatima: 1kg chawal, 300
+03/11/2026, 14:00 - Ahmed: bhai 2kg cheeni aur bhej do, 500
+04/11/2026, 09:10 - Bilal: 5 packet chai, 750, kal dunga
+04/11/2026, 09:45 - Sana: doodh ka 220 rehta hai
+04/11/2026, 10:20 - Usman: <Media omitted>
+04/11/2026, 10:21 - Usman: voice message
+04/11/2026, 11:00 - Ahmed: 1kg ghee, Rs 850, paid
+04/11/2026, 12:30 - Fatima: 2 kilo daal, 400 rupy, udhaar
+05/11/2026, 08:50 - Bilal: bhai kal wale 450 de diye
+05/11/2026, 09:30 - Sana: 1kg cheeni, 250
+05/11/2026, 10:15 - Noor General Store: Good morning! Aaj ki delivery 11 baje hogi
+05/11/2026, 11:00 - Ahmed: do kilo atta, 300 rupy
+05/11/2026, 12:00 - Usman: 3kg chawal 900, paid
