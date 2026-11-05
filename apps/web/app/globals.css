@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0f0f;
+  --foreground: #f0ede8;
+  --accent: #8b2635;
+  --accent2: #2d5a27;
+  --muted: #3a3a3a;
+  --border: #2a2a2a;
+  --card-bg: #1a1a1a;
+  --warning: #c4841d;
+  --danger: #c0392b;
+  --success: #2d5a27;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+
+/* Highlight animation for evidence rows */
+@keyframes highlight-pulse {
+  0%   { background-color: rgba(139, 38, 53, 0.4); }
+  50%  { background-color: rgba(139, 38, 53, 0.7); }
+  100% { background-color: rgba(139, 38, 53, 0.1); }
+}
+.evidence-highlight {
+  animation: highlight-pulse 1.2s ease-in-out;
+}
