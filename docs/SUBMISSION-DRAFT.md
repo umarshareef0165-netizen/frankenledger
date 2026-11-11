@@ -44,10 +44,10 @@ honesty, demo), custom agents (ledger-agent, demo-agent, reviewer-agent),
 and hooks (tests on save, secret blocking, demo smoke test). The `/.kiro`
 directory is committed at the repo root as evidence.
 
-## Links (TODO — fill with real URLs before submitting)
-- Public GitHub repo: [TODO]
-- Live app URL: [TODO]
-- Demo video (< 3 min, public YouTube): [TODO]
+## Links (verified 2026-11-11)
+- Public GitHub repo: https://github.com/umarshareef0165-netizen/frankenledger
+- Live app URL: https://frankenledger-21fh.vercel.app
+- Demo video (< 3 min, public YouTube): https://youtu.be/xNHWhH5CjZc
 
 ## Bonus
 - Best Student Project (Frankenstein): LinkedIn profile, student email,
@@ -61,5 +61,6 @@ directory is committed at the repo root as evidence.
 - Single-user, single-shop, no accounts, no cloud sync, no payments.
 - Sample data is fictional. No accuracy percentage is claimed; extraction
   quality is reported only on the small labelled sample set.
-- No fine-tuning; the agent uses a hosted LLM via API, with a deterministic
-  fallback when no key is configured.
+- No fine-tuning; the deployed agent currently runs in deterministic mode
+  (parser + rules only) because no LLM key is configured — a hosted LLM
+  via API is wired in and activates when a key is set.
