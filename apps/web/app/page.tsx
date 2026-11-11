@@ -116,6 +116,18 @@ function UploadZone({
 }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
+  // Render Free cold start is ~30–45s: after 5s of waiting, tell the user
+  // the server is waking up instead of showing a bare "Uploading…" spinner.
+  const [slowLoading, setSlowLoading] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      setSlowLoading(false);
+      return;
+    }
+    const t = setTimeout(() => setSlowLoading(true), 5000);
+    return () => clearTimeout(t);
+  }, [loading]);
 
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
@@ -172,7 +184,11 @@ function UploadZone({
       {loading ? (
         <div className="flex flex-col items-center gap-2">
           <span className="text-3xl animate-spin">⚙️</span>
-          <span className="text-sm text-zinc-400">Uploading…</span>
+          <span className="text-sm text-zinc-400">
+            {slowLoading
+              ? "Waking up the server… (Render Free cold start, may take ~30s)"
+              : "Uploading…"}
+          </span>
         </div>
       ) : ready ? (
         <div className="flex flex-col items-center gap-1 text-center">
