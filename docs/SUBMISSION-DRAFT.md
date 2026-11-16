@@ -41,7 +41,12 @@ Built entirely with Kiro CLI 3.0.0, spec-driven: 6 specs
 (`01-file-ingest`, `02-parser`, `03-reconciliation`, `04-agent-layer`,
 `05-dashboard-pdf`, `06-deploy`), steering files (product, tech-stack,
 honesty, demo), custom agents (ledger-agent, demo-agent, reviewer-agent),
-and hooks (tests on save, secret blocking, demo smoke test). The `/.kiro`
+and hooks (tests on save, secret blocking, demo smoke test). Win-prep
+(Nov 12) added a 16-test property-based suite over the parser and
+reconciler (`tests/test_properties.py`, seeded stdlib random generation;
+full suite 285 passed). No MCP server, Kiro powers, Kiro Web, or Kiro Crew
+were used — the build is CLI + specs + steering + agents + hooks + the
+property suite only. The `/.kiro`
 directory is committed at the repo root as evidence.
 
 ## Links (verified 2026-11-11)
