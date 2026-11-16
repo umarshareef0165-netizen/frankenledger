@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--headless",
+        "--executablePath",
+        "/home/hatch/.cache/puppeteer/chrome/linux-156.0.8078.47/chrome-linux64/chrome",
+        "--isolated",
+        "--viewport",
+        "1280x720",
+        "--no-usage-statistics",
+        "--proxyServer",
+        "http://127.0.0.1:18081",
+        "--chrome-arg=--no-sandbox",
+        "--chrome-arg=--disable-dev-shm-usage",
+        "--chrome-arg=--disable-gpu",
+        "--chrome-arg=--disable-background-networking",
+        "--chrome-arg=--disable-component-update",
+        "--chrome-arg=--ignore-certificate-errors"
+      ],
+      "autoApprove": [
+        "*"
+      ],
+      "command": "npx",
+      "disabled": false
+    }
+  }
+}
