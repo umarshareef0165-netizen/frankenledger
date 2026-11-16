@@ -57,6 +57,38 @@ re-run the demo-flow smoke test after every spec task completes.
 - Build with Kiro live session: Nov 11, 2026, 10:00 AM PT — attendance
   pending (entrant's step).
 
+## Property-based testing (added Nov 12, 2026 — win-prep)
+
+- `tests/test_properties.py` — 16 property tests over the parser (Spec 02)
+  and reconciler (Spec 03), seeded stdlib `random` only (no Hypothesis
+  dependency; each property uses a fixed recorded seed, so runs are
+  reproducible). Properties asserted for every generated input, not just
+  hand-picked examples:
+  - Parser: determinism (re-parse gives identical orders); an explicit Rs
+    amount is always parsed exactly; quantity/unit/item round-trip;
+    paid vs udhaar classification; shop-sender lines never produce orders;
+    media/voice-note lines count as voice notes, never orders; arbitrary
+    garbage lines never raise and line accounting always adds up; full
+    signal (item + quantity + amount) always means high confidence.
+  - Reconciler: totals always satisfy outstanding == sold − received;
+    `reconcile()` never mutates its input rows or orders; an identical paid
+    order + paid row raises zero flags; an amount gap > Rs 10 with the same
+    name/item/date always raises PRICE_MISMATCH; matching is one-to-one;
+    dismiss removes exactly one active flag and never mutates the original;
+    accepting PAID_NOT_RECORDED adds a paid row for the order's amount;
+    two identical ledger rows always raise DUPLICATE; `reconcile()` never
+    raises on random inputs and only ever emits the five known flag kinds.
+- Verified Nov 12, 2026: full suite **285 passed** (269 pre-existing + 16
+  new property tests), `npm run build` clean in `apps/web`.
+
+## What Kiro was NOT used for (honest limits)
+
+- **No MCP server** is wired into the build; no Kiro powers, no Kiro Web,
+  and no Kiro Crew were used — the build is Kiro CLI + specs + steering +
+  custom agents + hooks only. The property-based test suite above is the
+  one additional verifiable Kiro-prompted engineering practice added
+  during win-prep; it is not a claim of MCP/powers/Web/Crew use.
+
 ## Evidence in this repo
 
 - `/.kiro` at the repo root, committed from day one, never gitignored.
